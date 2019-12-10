@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'post_list' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -51,17 +51,28 @@
         </div>
     </nav>
     <div class="page-header">
+        <!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
         <marquee>
             <h1><a href="#">News Blog</a></h1>
         </marquee>
 
     </div>
     <!-- Content here -->
+
+
     <div class="container">
         <!-- <div class="row">
             <div class="col-md-8"> -->
-
-
+        <center>
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/blog.png' %}" class="card-img-top" alt="Image not Found">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Card with stretched link</h5> -->
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <a href="{% url 'post_new' %}" class="btn btn-primary stretched-link">Create new Post</a>
+                </div>
+            </div>
+        </center>
         <br> {% block content %} {% endblock %}
 
 
@@ -77,5 +88,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
+
 
 </html>
