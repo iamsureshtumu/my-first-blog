@@ -24,7 +24,6 @@ SECRET_KEY = 'enutk4r52_vfs8_8+%fs2hkw%o))f6m13k=$_mekf-s(itsgh)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com'] #i have given the hostname and address
 
