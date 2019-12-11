@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="{% url 'post_new' %}" tabindex="-1">Create New Post</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -51,11 +51,11 @@
         </div>
     </nav>
     <div class="page-header">
-        <!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
-        <marquee>
-            <h1><a href="#">News Blog</a></h1>
-        </marquee>
-
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> {% endif %}
+        <!-- <marquee> -->
+        <h1><a href="#">News Blog</a></h1>
+        <!-- </marquee> -->
     </div>
     <!-- Content here -->
 
@@ -63,16 +63,16 @@
     <div class="container">
         <!-- <div class="row">
             <div class="col-md-8"> -->
-        <center>
+        <!-- <center>
             <div class="card" style="width: 18rem;">
                 <img src="{% static 'images/blog.png' %}" class="card-img-top" alt="Image not Found">
                 <div class="card-body">
-                    <!-- <h5 class="card-title">Card with stretched link</h5> -->
-                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    <a href="{% url 'post_new' %}" class="btn btn-primary stretched-link">Create new Post</a>
+                     <h5 class="card-title">Card with stretched link</h5> 
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="{% url 'post_new' %}" class="btn btn-primary stretched-link">Create new Post</a>
                 </div>
             </div>
-        </center>
+        </center>  -->
         <br> {% block content %} {% endblock %}
 
 
