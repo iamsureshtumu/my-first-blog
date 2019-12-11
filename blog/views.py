@@ -45,5 +45,3 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def unknown(request):
-    return HttpResponse("<center><h1>You are Authorized to Write a Post</h1></center>")
